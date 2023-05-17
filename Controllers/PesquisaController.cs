@@ -42,6 +42,26 @@ namespace PesquisaMongoAPI.Controllers
 
             return Ok(result);
         }
+        [HttpGet("/api/pesquisaPorIdDeLoja/{lojaId}")]
+        public IActionResult GetPesquisaPorLoja(int lojaId)
+        {
+            
+            var results = _collection.Find(p => p.Lojas.Contains(lojaId)).ToList();
+
+
+            return Ok(results);
+        }
+        [HttpGet("api/getPesquisasValidas")]
+        public IActionResult GetPesquisasValidas(string dataAtual)
+        {
+            string[] dates = dataAtual.Split("/");
+
+            DateTime d = new DateTime(int.Parse(dates[2]), int.Parse(dates[1]), int.Parse(dates[0]));
+
+            var pesquisasValidas = _collection.Find(p => p.StartDate <= d && p.EndDate >= d).ToList();
+
+            return Ok(pesquisasValidas);
+        }
         
 
     }

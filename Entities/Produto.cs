@@ -5,7 +5,7 @@
         public string Id { get; set; }
         public string Nome { get; set; }
 
-        public bool Generico{ get; set;}
+        public string Generico{ get; set;}
 
         public string Categoria { get; set;}
 
