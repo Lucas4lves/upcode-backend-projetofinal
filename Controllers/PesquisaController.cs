@@ -13,8 +13,8 @@ namespace PesquisaMongoAPI.Controllers
 
         public PesquisaController()
         {
-            _database = DbConnection.Client.GetDatabase("pesquisas");
-            _collection = _database.GetCollection<Pesquisa>("pesquisa-collection");
+            _database = DbConnection.Client.GetDatabase("pesquisa");
+            _collection = _database.GetCollection<Pesquisa>("pesquisas-collection");
         }
 
         [HttpPost("/api/criar")]

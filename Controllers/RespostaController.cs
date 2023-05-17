@@ -13,7 +13,7 @@ namespace PesquisaMongoAPI.Controllers
         private readonly IMongoCollection<Resposta> _collection;
         public RespostaController()
         {
-            _database = DbConnection.Client.GetDatabase("pesquisas");
+            _database = DbConnection.Client.GetDatabase("pesquisa");
             _collection = _database.GetCollection<Resposta>("respostas");
         }
         [Route("api/criarResposta")]

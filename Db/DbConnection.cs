@@ -15,7 +15,7 @@ namespace PesquisaMongoAPI.Db
                 {
                     if (_client == null)
                     {
-                        var connectionString = "mongodb://localhost:27017";
+                        var connectionString = "mongodb+srv://user:tcRDMKuCYwt4uHOb@cluster0.vsukxef.mongodb.net/?authSource=admin";
                         _client = new MongoClient(connectionString);
                     }
                 }
