@@ -1,13 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "RHmqTxz48hrwXV++ZxANA5096t8845c9Im615U4U7W72nsM31m1avNtVDmRna9CTId0tVcsIIWiYJZgVuzw/Ag==",
-  "success": false,
+  "dgSpecHash": "LEs5o+L77PiyG0WWZoKWoKW/Rh1C+RarMDmO6VhBCwqW4YpUQKKXMCtwC9KuxCGSqsKCrvudrKTj98P+qSVTWg==",
+  "success": true,
   "projectFilePath": "C:\\Users\\125273\\source\\repos\\PesquisaMongoAPI\\PesquisaMongoAPI\\PesquisaMongoAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\125273\\.nuget\\packages\\awssdk.core\\3.7.100.14\\awssdk.core.3.7.100.14.nupkg.sha512",
     "C:\\Users\\125273\\.nuget\\packages\\awssdk.securitytoken\\3.7.100.14\\awssdk.securitytoken.3.7.100.14.nupkg.sha512",
     "C:\\Users\\125273\\.nuget\\packages\\dnsclient\\1.6.1\\dnsclient.1.6.1.nupkg.sha512",
-    "C:\\Users\\125273\\.nuget\\packages\\microsoft.aspnetcore.openapi\\7.0.3\\microsoft.aspnetcore.openapi.7.0.3.nupkg.sha512",
     "C:\\Users\\125273\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\125273\\.nuget\\packages\\microsoft.extensions.logging.abstractions\\2.0.0\\microsoft.extensions.logging.abstractions.2.0.0.nupkg.sha512",
     "C:\\Users\\125273\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
@@ -29,15 +28,5 @@
     "C:\\Users\\125273\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
     "C:\\Users\\125273\\.nuget\\packages\\zstdsharp.port\\0.6.2\\zstdsharp.port.0.6.2.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "NU1202",
-      "level": "Error",
-      "message": "O pacote Microsoft.AspNetCore.OpenApi 7.0.3 não é compatível com net6.0 (.NETCoreApp,Version=v6.0). O pacote Microsoft.AspNetCore.OpenApi 7.0.3 dá suporte a: net7.0 (.NETCoreApp,Version=v7.0)",
-      "libraryId": "Microsoft.AspNetCore.OpenApi",
-      "targetGraphs": [
-        "net6.0"
-      ]
-    }
-  ]
+  "logs": []
 }
