@@ -11,5 +11,7 @@
         public decimal? PrecoRegular { get; set;}
 
         public decimal? PrecoPromo { get; set;}
+
+        public DateTime? Data { get; set;}
     }
 }
