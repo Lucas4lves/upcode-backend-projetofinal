@@ -19,5 +19,7 @@ namespace PesquisaMongoAPI.Entities
         public List<int> Lojas { get; set; }
         
         public List<Produto> Produtos { get; set; }
+
+        public bool? IsFinished { get; set; } = false;  
     }
 }
