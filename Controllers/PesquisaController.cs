@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Linq;
 using MongoDB.Driver;
 using PesquisaMongoAPI.Db;
 using PesquisaMongoAPI.Entities;
@@ -62,7 +63,26 @@ namespace PesquisaMongoAPI.Controllers
 
             return Ok(pesquisasValidas);
         }
-        
+
+        [HttpGet("api/getPesquisasValidas/{id}")]
+        public IActionResult GetPesquisasValidas(int id, string dataAtual)
+        {
+            string[] dates = dataAtual.Split("/");
+
+            DateTime d = new DateTime(int.Parse(dates[2]), int.Parse(dates[1]), int.Parse(dates[0]));
+
+            var pesquisasPorId = _collection.Find(p => p.Lojas.Contains(id)).ToList();
+
+            var pesquisasValidas = from pesquisa in pesquisasPorId
+                                   where pesquisa.StartDate <= d && pesquisa.EndDate >= d
+                                   select pesquisa;
+
+        /*
+         _collection.Find(p => p.StartDate <= d && p.EndDate >= d).ToList();
+         */
+            return Ok(new { ok ="Oi" });
+        }
+
 
     }
 }

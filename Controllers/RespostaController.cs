@@ -66,7 +66,7 @@ namespace PesquisaMongoAPI.Controllers
         [HttpPut("api/put/{id}")]
         public IActionResult AdicionarRegistro (string id, List<Registro> registros)
         {
-            var filter = Builders<Resposta>.Filter.AnyEq("_id", new ObjectId(id));
+            var filter = Builders<Resposta>.Filter.AnyEq("pesquisaId", new ObjectId(id));
 
            foreach(var registro in registros)
             {
