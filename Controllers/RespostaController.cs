@@ -14,7 +14,7 @@ namespace PesquisaMongoAPI.Controllers
         public RespostaController()
         {
             _database = DbConnection.Client.GetDatabase("pesquisa");
-            _collection = _database.GetCollection<Resposta>("respostas");
+            _collection = _database.GetCollection<Resposta>("respostas2");
         }
         [Route("api/criarResposta")]
         [HttpPost]

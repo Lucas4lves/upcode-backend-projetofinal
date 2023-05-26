@@ -8,9 +8,9 @@
 
         public string ProdutoNome { get; set;}
 
-        public decimal? PrecoRegular { get; set;}
+        public string PrecoRegular { get; set;}
 
-        public decimal? PrecoPromo { get; set;}
+        public string PrecoPromo { get; set;}
 
         public DateTime? Data { get; set;}
     }
