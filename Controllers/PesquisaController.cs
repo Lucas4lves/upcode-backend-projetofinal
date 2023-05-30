@@ -53,34 +53,30 @@ namespace PesquisaMongoAPI.Controllers
             return Ok(results);
         }
         [HttpGet("api/getPesquisasValidas")]
-        public IActionResult GetPesquisasValidas(string dataAtual)
+        public IActionResult GetPesquisasValidas()
         {
-            string[] dates = dataAtual.Split("/");
+            DateTime dataAtual = DateTime.UtcNow;
 
-            DateTime d = new DateTime(int.Parse(dates[2]), int.Parse(dates[1]), int.Parse(dates[0]));
-
-            var pesquisasValidas = _collection.Find(p => p.StartDate <= d && p.EndDate >= d).ToList();
+            var pesquisasValidas = _collection.Find(p => p.StartDate <= dataAtual && p.EndDate >= dataAtual).ToList();
 
             return Ok(pesquisasValidas);
         }
 
         [HttpGet("api/getPesquisasValidas/{id}")]
-        public IActionResult GetPesquisasValidas(int id, string dataAtual)
+        public IActionResult GetPesquisasValidas(int id)
         {
-            string[] dates = dataAtual.Split("/");
-
-            DateTime d = new DateTime(int.Parse(dates[2]), int.Parse(dates[1]), int.Parse(dates[0]));
+            DateTime dataAtual = DateTime.UtcNow;
 
             var pesquisasPorId = _collection.Find(p => p.Lojas.Contains(id)).ToList();
 
             var pesquisasValidas = from pesquisa in pesquisasPorId
-                                   where pesquisa.StartDate <= d && pesquisa.EndDate >= d
+                                   where pesquisa.StartDate <= dataAtual && pesquisa.EndDate >= dataAtual
                                    select pesquisa;
 
         /*
          _collection.Find(p => p.StartDate <= d && p.EndDate >= d).ToList();
          */
-            return Ok(new { ok ="Oi" });
+            return Ok(pesquisasValidas);
         }
 
 
